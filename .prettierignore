@@ -1,0 +1,11 @@
+build
+public
+node_modules
+
+.eslintrc
+.eslintignore
+.prettierrc
+.prettierignore
+.gitignore
+
+*.scss

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:active,
+:hover,
+:focus {
+  outline: none !important;
+  outline-offset: none !important;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: "Rubik400";
+  src: url("../src/fonts/rubik/Rubik-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Rubik500";
+  src: url("../src/fonts/rubik/Rubik-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Rubik700";
+  src: url("../src/fonts/rubik/Rubik-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
