@@ -1,0 +1,14 @@
+.tasks {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+}

@@ -6,15 +6,99 @@
 
   .container {
     width: 100%;
-    max-width: 1300px;
+    height: 300px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../images/background_title.jpg');
+    background-size: cover;
+    padding: 15px;
 
-    .title {
-      margin-top: 15px;
+    .menuAndButtons {
       width: 100%;
-      text-align: center;
-      font-family: "Rubik700";
-      font-size: 45px;
-      line-height: inherit;
+      flex: 0 1 20%;
+      display: flex;
+
+      .icon {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        span {
+          background-color: #ffffff;
+          position: absolute;
+          width: 60%;
+          height: 3px;
+          left: 0;
+          top: 8.5px;
+          transition: all 0.3s ease 0s;
+        }
+        &::before,
+        &::after {
+          content: '';
+          background-color: #ffffff;
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          left: 0;
+          transition: all 0.3s ease 0s;
+        }
+        &::before {
+          top: 0;
+        }
+        &::after {
+          bottom: 0;
+        }
+      }
+    }
+
+    .titleAndTaskCounters {
+      width: 100%;
+      flex: 0 1 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        width: min-content;
+        font-family: 'Roboto700';
+        font-size: 40px;
+        line-height: inherit;
+        color: #ffffff;
+      }
+      .tasksContainer {
+        flex: 0 1 30%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .dateAndProgress {
+      width: 100%;
+      flex: 0 1 20%;
+      display: flex;
+      .date {
+        align-self: flex-end;
+        width: fit-content;
+        font-family: 'Roboto400';
+        font-size: 17px;
+        line-height: inherit;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .header {
+    .container {
+      height: 200px;
+      .titleAndTaskCounters {
+        .tasksContainer {
+          flex-direction: column;
+          height: 100%;
+        }
+      }
     }
   }
 }

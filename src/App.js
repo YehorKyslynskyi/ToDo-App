@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './App.module.scss'
 import Header from './Components/Header/Header'
+import Tasks from './Components/Tasks/Tasks'
 
 function App() {
   return (
@@ -8,6 +9,9 @@ function App() {
       <header>
         <Header />
       </header>
+      <main>
+        <Tasks />
+      </main>
     </div>
   )
 }
