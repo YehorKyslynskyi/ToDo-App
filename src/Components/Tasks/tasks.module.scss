@@ -1,6 +1,6 @@
 .tasks {
   width: 100%;
-  height: inherit;
+  height: auto;
   display: flex;
   justify-content: center;
   .container {
@@ -9,6 +9,26 @@
     height: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 15px;
+    .plusBtn {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.activeForm {
+  max-height: 100%;
+}
+
+.activeBtn {
+  margin-top: 15px;
+  span {
+    display: none;
+  }
+  &::after {
+    content: '—';
+    font-family: 'Roboto700';
   }
 }

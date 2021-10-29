@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import cx from 'classnames'
 import Button from '../shared/Button/Button'
 import Input from '../shared/Input/Input'
 import styles from './createTaskForm.module.scss'
 import RadioButton from '../shared/RadioButton/RadioButton'
 
-const CreateTaskForm = ({ register, handleSubmit, onSubmit }) => {
+const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
   const [selectedType, setSelectedType] = useState(null)
 
   const setType = (e) => setSelectedType(e.target.value)
@@ -12,7 +13,10 @@ const CreateTaskForm = ({ register, handleSubmit, onSubmit }) => {
   const checkIsActive = (value) => selectedType === value
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={cx(styles.form, className)}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Input
         className={styles.label}
         type="text"
@@ -47,7 +51,7 @@ const CreateTaskForm = ({ register, handleSubmit, onSubmit }) => {
       </div>
 
       <Button className={styles.button} type="submit">
-        Add
+        Add Task to List
       </Button>
     </form>
   )

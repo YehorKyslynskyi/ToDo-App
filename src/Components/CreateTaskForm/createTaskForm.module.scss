@@ -1,12 +1,19 @@
-form {
+.form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  max-height: 0%;
+  overflow: hidden;
+  transition: 0.3s;
+
   .label {
     position: relative;
     padding: 0;
     margin-top: 30px;
-    width: 50%;
+    width: 100%;
+    max-width: 370px;
 
     input {
       position: relative;
@@ -42,16 +49,14 @@ form {
     }
   }
   .radioContainer {
-    width: 50%;
+    width: 100%;
+    max-width: 370px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
 
   .button {
-    border: 1px solid black;
-    font-family: 'Roboto400';
-    font-size: 17px;
   }
 }
 

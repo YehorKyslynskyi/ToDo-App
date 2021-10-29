@@ -1,5 +1,5 @@
 .label {
-  font-family: 'Roboto400';
+  font-family: 'Roboto500';
   font-size: 15px;
   line-height: inherit;
   background-color: white;
@@ -13,6 +13,7 @@
   margin: 15px 0;
   cursor: pointer;
   transition: 0.3s;
+  color: #527173;
   &:hover {
     background: #86b9bb;
     color: white;
