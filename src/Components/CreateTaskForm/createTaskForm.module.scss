@@ -2,12 +2,64 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  input {
-    width: inherit;
+  .label {
+    position: relative;
+    padding: 0;
+    margin-top: 30px;
+    width: 50%;
+
+    input {
+      position: relative;
+      bottom: 0;
+      font-family: 'Roboto400';
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #527173;
+      outline: 0;
+      font-size: 15px;
+      color: black;
+      padding: 0;
+      background: transparent;
+      transition: 5s;
+
+      &::placeholder {
+        color: #527173;
+        font-family: 'Roboto400';
+        font-size: 15px;
+      }
+    }
+
+    input:focus {
+      border-image: linear-gradient(to right, #527173, #86b9bb);
+      border-image-slice: 1;
+    }
+    /* reset input */
+    input {
+      &:required,
+      &:invalid {
+        box-shadow: none;
+      }
+    }
   }
+  .radioContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .button {
     border: 1px solid black;
     font-family: 'Roboto400';
     font-size: 17px;
+  }
+}
+
+.activeRadioBtn {
+  background-color: #86b9bb !important;
+  color: white !important;
+  .dot {
+    background-color: #527173 !important;
+    border: 2px solid white !important;
   }
 }

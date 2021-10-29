@@ -1,17 +1,30 @@
 import React from 'react'
+import cx from 'classnames'
 import styles from './input.module.scss'
 
-const Input = ({ children, label, register, type, name, ...props }) => (
-  <div className={styles.inputContainer}>
+const Input = ({
+  placeholder,
+  className,
+  children,
+  label,
+  register,
+  type,
+  name,
+  dot,
+  ...props
+}) => (
+  <label className={cx(styles.label, className)} htmlFor={label}>
+    <div className={dot} />
     <input
-      id={name}
+      id={label}
       type={type}
-      className={styles.input}
-      {...register(label)}
+      {...register(name)}
       {...props}
+      autoComplete="off"
+      placeholder={placeholder}
     />
-    <label htmlFor={name}>{children}</label>
-  </div>
+    {label}
+  </label>
 )
 
 export default Input
