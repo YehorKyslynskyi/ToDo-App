@@ -36,17 +36,17 @@ const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
           register={register}
           onChange={setType}
           label="Business Task"
-          value="business"
+          value="Business"
           registerName="type"
-          isActive={checkIsActive('business')}
+          isActive={checkIsActive('Business')}
         />
         <RadioButton
           register={register}
           onChange={setType}
           label="Personal Task"
-          value="personal"
+          value="Personal"
           registerName="type"
-          isActive={checkIsActive('personal')}
+          isActive={checkIsActive('Personal')}
         />
       </div>
 

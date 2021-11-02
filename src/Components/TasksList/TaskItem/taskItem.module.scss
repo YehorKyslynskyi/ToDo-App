@@ -1,0 +1,56 @@
+.taskItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #86b9bb;
+  border-radius: 100px;
+  padding: 30px;
+  margin-top: 15px;
+
+  .taskBodyContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .title {
+      flex: 0 1 20%;
+      font-family: 'Roboto700';
+      font-size: 30px;
+      line-height: inherit;
+      word-wrap: break-word;
+      color: #527173;
+    }
+    .message {
+      flex: 0 1 60%;
+      font-family: 'Roboto400';
+      font-size: 20px;
+      line-height: inherit;
+      word-wrap: break-word;
+      color: #527173;
+    }
+    .checkbox {
+      flex: 0 1 10%;
+    }
+  }
+  .dateAndTypeContainer {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .date {
+      font-family: 'Roboto400';
+      font-size: 15px;
+      margin-left: 10px;
+      color: #527173;
+    }
+    .type {
+      font-family: 'Roboto400';
+      font-size: 15px;
+      line-height: inherit;
+      margin-right: 20px;
+      color: #527173;
+    }
+  }
+}

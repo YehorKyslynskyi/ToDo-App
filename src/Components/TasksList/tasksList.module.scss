@@ -1,0 +1,14 @@
+.header {
+  margin: 15px 0 0 0;
+  font-family: 'Roboto700';
+  font-size: 30px;
+  line-height: inherit;
+  color: #527173;
+}
+.tasksList {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
