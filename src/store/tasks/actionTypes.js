@@ -1,0 +1,4 @@
+export const ACTION_TYPES = {
+  ADD_TASK: 'TASKS/ADD_TASK',
+  SET_DONE_TASK: 'TASKS/SET_DONE_TASK',
+}

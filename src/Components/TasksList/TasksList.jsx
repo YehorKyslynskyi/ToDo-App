@@ -1,5 +1,5 @@
 import React from 'react'
-import TaskItem from './TaskItem/TaskItem'
+import TaskItem from './TaskItem'
 import styles from './tasksList.module.scss'
 
 const TasksList = ({ tasks, onDoneClick, header }) =>

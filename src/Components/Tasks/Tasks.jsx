@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { nanoid } from 'nanoid'
+import { useDispatch, useSelector } from 'react-redux'
 import cx from 'classnames'
 import CreateTaskForm from '../CreateTaskForm/CreateTaskForm'
 import Button from '../shared/Button/Button'
 import TasksList from '../TasksList/TasksList'
+import { addTask, setDoneStatus } from '../../store/tasks/actions'
 
 import styles from './tasks.module.scss'
 
 const Tasks = () => {
-  const [tasks, setTasks] = useState([])
+  const dispatch = useDispatch()
+  const tasks = useSelector((state) => state.tasks.tasks)
+
+  /*  const [tasks, setTasks] = useState([]) */
   const { register, handleSubmit } = useForm([])
   const [isActiveForm, setIsActiveForm] = useState(false)
 
@@ -21,9 +26,10 @@ const Tasks = () => {
       isDone: false,
     }
     if (tasks !== null) {
-      setTasks([...tasks, newTask])
+      /* setTasks([...tasks, newTask]) */
+      dispatch(addTask(newTask))
     } else {
-      setTasks(newTask)
+      dispatch()
     }
   }
   const handleActiveForm = () => {
@@ -31,11 +37,7 @@ const Tasks = () => {
   }
 
   const onDoneClick = (id, checked) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, isDone: checked } : task,
-      ),
-    )
+    dispatch(setDoneStatus({ id, checked }))
   }
 
   return (
