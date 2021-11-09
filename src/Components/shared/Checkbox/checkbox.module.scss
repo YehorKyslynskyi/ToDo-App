@@ -16,10 +16,10 @@
   transition: 0.3s;
   border-radius: 100px;
   padding: 14px 16px;
-  color: #527173;
-  border: 2px solid #86b9bb;
+  color: #397251;
+  border: 2px solid #397251;
   &:hover {
-    background: #86b9bb;
+    background: #397251;
     color: white;
   }
   input {
@@ -27,19 +27,20 @@
   }
 
   .dot {
+    transition: 0.3s;
     width: 15px;
     height: 15px;
     border-radius: 100%;
     background-color: white;
-    border: 2px solid #86b9bb;
+    border: 2px solid #397251;
   }
 }
 
 .checked {
-  background-color: #86b9bb !important;
+  background-color: #397251 !important;
   color: white !important;
   .dot {
-    background-color: #527173 !important;
+    background-color: #397251 !important;
     border: 2px solid white !important;
   }
 }

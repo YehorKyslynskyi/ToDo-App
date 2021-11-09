@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
-import Button from '../shared/Button/Button'
-import Input from '../shared/Input/Input'
+
+import Input from '../../../shared/Input'
 import styles from './createTaskForm.module.scss'
-import RadioButton from '../shared/RadioButton/RadioButton'
+import RadioButton from '../../../shared/RadioButton'
+import Button from '../../../shared/Button'
 
 const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
   const [selectedType, setSelectedType] = useState(null)

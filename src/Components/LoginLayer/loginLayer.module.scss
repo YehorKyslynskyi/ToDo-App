@@ -13,28 +13,43 @@
   -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
 }
 
-.App {
+.loginLayer {
+  background-image: url('../../images/background_login.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 15px;
+  .loginForm {
+    border: 1px solid black;
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    max-width: 400px;
+  }
 }
 
 @font-face {
   font-family: 'Roboto400';
-  src: url('../src/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  src: url('../../fonts/roboto/Roboto-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto500';
-  src: url('../src/fonts/roboto/Roboto-Medium.ttf') format('truetype');
+  src: url('../../fonts/roboto/Roboto-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto700';
-  src: url('../src/fonts/roboto/Roboto-Bold.ttf') format('truetype');
+  src: url('../../fonts/roboto/Roboto-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }

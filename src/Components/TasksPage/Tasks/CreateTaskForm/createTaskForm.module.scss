@@ -21,7 +21,7 @@
       font-family: 'Roboto400';
       width: 100%;
       border: none;
-      border-bottom: 2px solid #527173;
+      border-bottom: 2px solid #397251;
       outline: 0;
       font-size: 15px;
       color: black;
@@ -30,14 +30,14 @@
       transition: 5s;
 
       &::placeholder {
-        color: #527173;
+        color: #397251;
         font-family: 'Roboto400';
         font-size: 15px;
       }
     }
 
     input:focus {
-      border-image: linear-gradient(to right, #527173, #86b9bb);
+      border-image: linear-gradient(to right, #397251, #86b9bb);
       border-image-slice: 1;
     }
     /* reset input */

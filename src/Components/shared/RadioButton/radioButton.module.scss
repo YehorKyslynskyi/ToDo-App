@@ -13,7 +13,7 @@
   margin: 15px 0;
   cursor: pointer;
   transition: 0.3s;
-  color: #527173;
+  color: #397251;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
   -khtml-user-select: none; /* Konqueror */
@@ -21,7 +21,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
   &:hover {
-    background: #86b9bb;
+    background: #397251;
     color: white;
   }
 
@@ -34,15 +34,15 @@
     height: 15px;
     border-radius: 100%;
     background-color: white;
-    border: 2px solid #86b9bb;
+    border: 2px solid #397251;
   }
 }
 
 .activeRadioBtn {
-  background-color: #86b9bb !important;
+  background-color: #397251 !important;
   color: white !important;
   .dot {
-    background-color: #527173 !important;
+    background-color: #397251 !important;
     border: 2px solid white !important;
   }
 }
