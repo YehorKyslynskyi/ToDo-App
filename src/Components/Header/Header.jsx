@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import TaskCounter from '../TasksPage/Header/TaskCounter'
 import styles from './header.module.scss'
-import TaskCounter from './TaskCounter/TaskCounter'
 
 const Header = () => {
   const tasks = useSelector((state) => state.tasks.tasks)
