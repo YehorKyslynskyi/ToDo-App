@@ -1,0 +1,31 @@
+.form {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .input {
+    width: 70%;
+    input {
+      border-bottom: 2px solid #2a434f;
+      &::placeholder {
+        color: #2a434f;
+      }
+    }
+    input:focus {
+      border-image: linear-gradient(to right, #2a434f, #d2c9cc);
+      border-image-slice: 1;
+    }
+  }
+  .button {
+    margin-top: 20px;
+    padding: 7px 10px;
+    border: 2px solid #2a434f;
+    color: #2a434f;
+    &:hover {
+      background: #2a434f;
+      color: white;
+    }
+  }
+}

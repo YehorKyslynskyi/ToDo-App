@@ -16,10 +16,10 @@
   transition: 0.3s;
   border-radius: 100px;
   padding: 14px 16px;
-  color: #397251;
-  border: 2px solid #397251;
+  color: #2a434f;
+  border: 2px solid #2a434f;
   &:hover {
-    background: #397251;
+    background: #2a434f;
     color: white;
   }
   input {
@@ -32,15 +32,15 @@
     height: 15px;
     border-radius: 100%;
     background-color: white;
-    border: 2px solid #397251;
+    border: 2px solid #2a434f;
   }
 }
 
 .checked {
-  background-color: #397251 !important;
+  background-color: #2a434f !important;
   color: white !important;
   .dot {
-    background-color: #397251 !important;
+    background-color: #2a434f !important;
     border: 2px solid white !important;
   }
 }

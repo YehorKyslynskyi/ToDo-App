@@ -8,46 +8,6 @@
   overflow: hidden;
   transition: 0.3s;
 
-  .label {
-    position: relative;
-    padding: 0;
-    margin-top: 30px;
-    width: 100%;
-    max-width: 370px;
-
-    input {
-      position: relative;
-      bottom: 0;
-      font-family: 'Roboto400';
-      width: 100%;
-      border: none;
-      border-bottom: 2px solid #397251;
-      outline: 0;
-      font-size: 15px;
-      color: black;
-      padding: 0;
-      background: transparent;
-      transition: 5s;
-
-      &::placeholder {
-        color: #397251;
-        font-family: 'Roboto400';
-        font-size: 15px;
-      }
-    }
-
-    input:focus {
-      border-image: linear-gradient(to right, #397251, #86b9bb);
-      border-image-slice: 1;
-    }
-    /* reset input */
-    input {
-      &:required,
-      &:invalid {
-        box-shadow: none;
-      }
-    }
-  }
   .radioContainer {
     width: 100%;
     max-width: 370px;

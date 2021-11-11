@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from './loginLayer.module.scss'
 
-const LoginLayer = () => (
+const LoginLayer = ({ children }) => (
   <div className={styles.loginLayer}>
     <div className={styles.loginForm}>
-      <header>123456</header>
+      <header>To Do App</header>
+      {children}
     </div>
   </div>
 )

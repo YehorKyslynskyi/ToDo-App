@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid #397251;
+  border: 2px solid #2a434f;
   border-radius: 100px;
   padding: 30px;
   margin-top: 15px;
@@ -21,7 +21,7 @@
       font-size: 30px;
       line-height: inherit;
       word-wrap: break-word;
-      color: #397251;
+      color: #2a434f;
     }
     .message {
       flex: 0 1 60%;
@@ -29,7 +29,7 @@
       font-size: 20px;
       line-height: inherit;
       word-wrap: break-word;
-      color: #397251;
+      color: #2a434f;
     }
     .checkbox {
       flex: 0 1 10%;
@@ -44,14 +44,14 @@
       font-family: 'Roboto400';
       font-size: 15px;
       margin-left: 10px;
-      color: #397251;
+      color: #2a434f;
     }
     .type {
       font-family: 'Roboto400';
       font-size: 15px;
       line-height: inherit;
       margin-right: 20px;
-      color: #397251;
+      color: #2a434f;
     }
   }
 }

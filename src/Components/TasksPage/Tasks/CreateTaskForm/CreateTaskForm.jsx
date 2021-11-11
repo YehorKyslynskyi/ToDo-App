@@ -18,15 +18,8 @@ const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
       className={cx(styles.form, className)}
       onSubmit={handleSubmit(onSubmit)}
     >
+      <Input type="text" register={register} placeholder="Title" name="title" />
       <Input
-        className={styles.label}
-        type="text"
-        register={register}
-        placeholder="Title"
-        name="title"
-      />
-      <Input
-        className={styles.label}
         type="text"
         register={register}
         placeholder="Message"

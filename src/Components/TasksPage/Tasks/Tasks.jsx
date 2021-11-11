@@ -14,7 +14,6 @@ const Tasks = () => {
   const dispatch = useDispatch()
   const tasks = useSelector((state) => state.tasks.tasks)
 
-  /*  const [tasks, setTasks] = useState([]) */
   const { register, handleSubmit } = useForm([])
   const [isActiveForm, setIsActiveForm] = useState(false)
 
@@ -57,12 +56,12 @@ const Tasks = () => {
           onSubmit={onSubmit}
         />
         <TasksList
-          header="Your Tasks"
+          header="Your Tasks !"
           onDoneClick={onDoneClick}
           tasks={tasks.filter((task) => !task.isDone)}
         />
         <TasksList
-          header="Complited Tasks"
+          header="Complited Tasks ✓"
           onDoneClick={onDoneClick}
           tasks={tasks.filter((task) => task.isDone)}
         />
