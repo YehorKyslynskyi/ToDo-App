@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
-
+import { taskFormValidations } from '../../../../utils/validations'
 import Input from '../../../shared/Input'
 import styles from './createTaskForm.module.scss'
 import RadioButton from '../../../shared/RadioButton'
 import Button from '../../../shared/Button'
 
-const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
+const CreateTaskForm = ({
+  register,
+  handleSubmit,
+  errors,
+  onSubmit,
+  className,
+}) => {
   const [selectedType, setSelectedType] = useState(null)
 
   const setType = (e) => setSelectedType(e.target.value)
@@ -18,12 +24,21 @@ const CreateTaskForm = ({ register, handleSubmit, onSubmit, className }) => {
       className={cx(styles.form, className)}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Input type="text" register={register} placeholder="Title" name="title" />
       <Input
+        validations={taskFormValidations}
+        type="text"
+        register={register}
+        placeholder="Title"
+        name="title"
+        error={errors?.title?.message}
+      />
+      <Input
+        validations={taskFormValidations}
         type="text"
         register={register}
         placeholder="Message"
         name="message"
+        error={errors?.message?.message}
       />
       <div className={styles.radioContainer}>
         <RadioButton

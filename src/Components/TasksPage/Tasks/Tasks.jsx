@@ -14,7 +14,12 @@ const Tasks = () => {
   const dispatch = useDispatch()
   const tasks = useSelector((state) => state.tasks.tasks)
 
-  const { register, handleSubmit } = useForm([])
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm([])
   const [isActiveForm, setIsActiveForm] = useState(false)
 
   const onSubmit = (data) => {
@@ -25,11 +30,11 @@ const Tasks = () => {
       isDone: false,
     }
     if (tasks !== null) {
-      /* setTasks([...tasks, newTask]) */
       dispatch(addTask(newTask))
     } else {
       dispatch()
     }
+    reset()
   }
   const handleActiveForm = () => {
     setIsActiveForm((prevValue) => !prevValue)
@@ -53,6 +58,7 @@ const Tasks = () => {
           className={cx({ [styles.activeForm]: isActiveForm })}
           register={register}
           handleSubmit={handleSubmit}
+          errors={errors}
           onSubmit={onSubmit}
         />
         <TasksList
