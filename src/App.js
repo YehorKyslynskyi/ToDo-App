@@ -1,18 +1,17 @@
 import React from 'react'
-import styles from './App.module.scss'
-import Header from './Components/Header/Header'
-import Tasks from './Components/Tasks/Tasks'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store'
+
+import Routing from './Components/Routing/Routing'
 
 function App() {
   return (
-    <div className={styles.App}>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <Tasks />
-      </main>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Routing />
+      </Provider>
+    </BrowserRouter>
   )
 }
 

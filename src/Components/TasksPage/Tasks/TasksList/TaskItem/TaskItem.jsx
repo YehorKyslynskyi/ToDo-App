@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from '../../shared/Checkbox/Checkbox'
+import Checkbox from '../../../../shared/Checkbox/Checkbox'
 import styles from './taskItem.module.scss'
 
 const TaskItem = ({ task, onDoneClick }) => (

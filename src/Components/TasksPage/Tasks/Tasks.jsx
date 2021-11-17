@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form'
 import { nanoid } from 'nanoid'
 import { useDispatch, useSelector } from 'react-redux'
 import cx from 'classnames'
-import CreateTaskForm from '../CreateTaskForm/CreateTaskForm'
-import Button from '../shared/Button/Button'
-import TasksList from '../TasksList/TasksList'
-import { addTask, setDoneStatus } from '../../store/tasks/actions'
+import CreateTaskForm from './CreateTaskForm'
+import Button from '../../shared/Button/Button'
+import TasksList from './TasksList'
+import { addTask, setDoneStatus } from '../../../store/tasks/actions'
 
 import styles from './tasks.module.scss'
 
@@ -14,8 +14,12 @@ const Tasks = () => {
   const dispatch = useDispatch()
   const tasks = useSelector((state) => state.tasks.tasks)
 
-  /*  const [tasks, setTasks] = useState([]) */
-  const { register, handleSubmit } = useForm([])
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm([])
   const [isActiveForm, setIsActiveForm] = useState(false)
 
   const onSubmit = (data) => {
@@ -26,11 +30,11 @@ const Tasks = () => {
       isDone: false,
     }
     if (tasks !== null) {
-      /* setTasks([...tasks, newTask]) */
       dispatch(addTask(newTask))
     } else {
       dispatch()
     }
+    reset()
   }
   const handleActiveForm = () => {
     setIsActiveForm((prevValue) => !prevValue)
@@ -54,15 +58,16 @@ const Tasks = () => {
           className={cx({ [styles.activeForm]: isActiveForm })}
           register={register}
           handleSubmit={handleSubmit}
+          errors={errors}
           onSubmit={onSubmit}
         />
         <TasksList
-          header="Your Tasks"
+          header="Your Tasks !"
           onDoneClick={onDoneClick}
           tasks={tasks.filter((task) => !task.isDone)}
         />
         <TasksList
-          header="Complited Tasks"
+          header="Complited Tasks ✓"
           onDoneClick={onDoneClick}
           tasks={tasks.filter((task) => task.isDone)}
         />

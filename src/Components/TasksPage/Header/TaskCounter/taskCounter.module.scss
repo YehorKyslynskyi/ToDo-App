@@ -1,0 +1,19 @@
+.taskCounter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 50%;
+  .count {
+    font-family: 'Roboto500';
+    font-size: 25px;
+    line-height: inherit;
+    color: #ffffff;
+  }
+  .description {
+    font-family: 'Roboto400';
+    font-size: 17px;
+    line-height: inherit;
+    color: #ffffff;
+  }
+}

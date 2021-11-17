@@ -10,8 +10,8 @@
   margin: 0;
   max-width: 200px;
   border-radius: 100px;
-  border: 2px solid #86b9bb;
-  color: #527173;
+  border: 2px solid #2a434f;
+  color: #2a434f;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
   -khtml-user-select: none; /* Konqueror */
@@ -19,7 +19,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
   &:hover {
-    background: #86b9bb;
+    background: #2a434f;
     color: white;
   }
 }
