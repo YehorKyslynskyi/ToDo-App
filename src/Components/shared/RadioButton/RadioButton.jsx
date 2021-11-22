@@ -2,8 +2,15 @@ import React from 'react'
 import cx from 'classnames'
 import styles from './radioButton.module.scss'
 
-const RadioButton = ({ label, register, value, onChange, isActive }) => {
-  const inputRegister = register('type')
+const RadioButton = ({
+  label,
+  register,
+  value,
+  onChange,
+  isActive,
+  validations,
+}) => {
+  const inputRegister = register('type', validations)
 
   return (
     <label

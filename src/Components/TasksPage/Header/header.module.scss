@@ -18,6 +18,7 @@
       width: 100%;
       flex: 0 1 20%;
       display: flex;
+      justify-content: space-between;
 
       .icon {
         display: block;
@@ -49,6 +50,16 @@
         }
         &::after {
           bottom: 0;
+        }
+      }
+
+      .button {
+        color: #2a434f;
+        background-color: white;
+        border-color: white;
+        &:hover {
+          background: #2a434f;
+          color: white;
         }
       }
     }

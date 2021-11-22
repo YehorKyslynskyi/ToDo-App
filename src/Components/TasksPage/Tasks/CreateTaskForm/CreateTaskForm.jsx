@@ -12,6 +12,7 @@ const CreateTaskForm = ({
   errors,
   onSubmit,
   className,
+  inActiveRadio,
 }) => {
   const [selectedType, setSelectedType] = useState(null)
 
@@ -42,20 +43,26 @@ const CreateTaskForm = ({
       />
       <div className={styles.radioContainer}>
         <RadioButton
+          validations={taskFormValidations}
           register={register}
           onChange={setType}
           label="Business Task"
           value="Business"
           registerName="type"
           isActive={checkIsActive('Business')}
+          inActiveRadio={inActiveRadio}
+          error={errors?.message?.message}
         />
         <RadioButton
+          validations={taskFormValidations}
           register={register}
           onChange={setType}
           label="Personal Task"
           value="Personal"
           registerName="type"
           isActive={checkIsActive('Personal')}
+          inActiveRadio={inActiveRadio}
+          error={errors?.message?.message}
         />
       </div>
 

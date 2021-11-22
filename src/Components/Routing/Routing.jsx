@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, useHistory } from 'react-router-dom'
 import { addUser } from '../../store/user/actions'
 import API from '../../API/userAuth'
 import LoginPage from '../LoginPage/LoginPage'
@@ -10,31 +10,31 @@ const Routing = () => {
   const dispatch = useDispatch()
 
   const user = useSelector((state) => state.user.user)
+  const history = useHistory()
 
   useEffect(async () => {
     if (localStorage.getItem('token')) {
       const userResponse = await API.getUser()
       const newUser = {
         ...userResponse.data.data,
-        token: localStorage.getItem('token'),
       }
+      console.log('setuser')
       dispatch(addUser(newUser))
+      history.push('/home')
     }
-  }, [localStorage.getItem('token')])
+  }, [])
 
-  return (
+  console.log({ user })
+  return user ? (
     <Switch>
-      {user ? (
-        <>
-          <Route exact path="/home" component={TasksPage} />
-          <Redirect to="/home" />
-        </>
-      ) : (
-        <>
-          <Route path="/login" component={LoginPage} />
-          <Redirect to="/login" />
-        </>
-      )}
+      <Route path="/home" component={TasksPage} />
+      <Redirect exact from="/" to="/home" />
+      <Redirect to="/404" />
+    </Switch>
+  ) : (
+    <Switch>
+      <Route path="/login" component={LoginPage} />
+      <Redirect to="/login" />
     </Switch>
   )
 }
