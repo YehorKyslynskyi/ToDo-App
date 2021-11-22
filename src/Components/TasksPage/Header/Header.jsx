@@ -1,9 +1,12 @@
 import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
+import Button from '../../shared/Button'
 import styles from './header.module.scss'
 import TaskCounter from './TaskCounter/TaskCounter'
 
 const Header = () => {
+  const user = useSelector((state) => state.user.user)
+
   const tasks = useSelector((state) => state.tasks.tasks)
   const businessTasksCount = useMemo(
     () => tasks.filter((task) => task.type === 'Business').length || 0,
@@ -17,6 +20,11 @@ const Header = () => {
 
   const date = new Date()
 
+  const onLogOut = () => {
+    localStorage.removeItem('token')
+    document.location.reload()
+  }
+
   return (
     <div className={styles.header}>
       <div className={styles.container}>
@@ -24,9 +32,12 @@ const Header = () => {
           <div className={styles.icon}>
             <span />
           </div>
+          <Button onClick={onLogOut} className={styles.button}>
+            Log Out
+          </Button>
         </div>
         <div className={styles.titleAndTaskCounters}>
-          <div className={styles.title}>Your Things</div>
+          <div className={styles.title}>Hello {user.first_name}</div>
           <div className={styles.tasksContainer}>
             <TaskCounter count={personalTasksCount} description="Personal" />
             <TaskCounter count={businessTasksCount} description="Business" />

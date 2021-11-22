@@ -47,6 +47,14 @@
     border: 2px solid white !important;
   }
 }
+.inActiveRadioBtn {
+  background-color: white !important;
+  color: #2a434f !important;
+  .dot {
+    background-color: white !important;
+    border: 2px solid #2a434f !important;
+  }
+}
 
 @media (max-width: 769px) {
   .label {

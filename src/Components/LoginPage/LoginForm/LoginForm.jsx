@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
 import { useForm } from 'react-hook-form'
-import { useDispatch, useSelector } from 'react-redux'
-import { addUser } from '../../../store/user/actions'
-import API from '../../../API/userAuth'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../../../store/user/actions'
+/* import API from '../../../API/userAuth' */
 import {
   emailValidations,
   passwordValidations,
@@ -14,30 +15,24 @@ import styles from './loginForm.module.scss'
 
 const LoginForm = () => {
   const [isActiveError, setIsActiveError] = useState(false)
-
+  const history = useHistory()
   const dispatch = useDispatch()
-  const user = useSelector((state) => state.user.user)
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm([])
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     try {
-      const loginResponse = await API.login(data)
-      const userResponse = await API.getUser()
-      localStorage.setItem('token', loginResponse.data.token)
-      const newUser = {
-        ...userResponse.data.data,
-        token: localStorage.getItem('token'),
-      }
-      dispatch(addUser(newUser))
+      dispatch(
+        loginUser(data, () => {
+          history.push('/home')
+        }),
+      )
     } catch (e) {
-      console.log('ERROR !', e)
       setIsActiveError(true)
-    } finally {
-      console.log(user)
     }
   }
 

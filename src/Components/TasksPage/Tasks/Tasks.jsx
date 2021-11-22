@@ -21,6 +21,7 @@ const Tasks = () => {
     reset,
   } = useForm([])
   const [isActiveForm, setIsActiveForm] = useState(false)
+  const [inActiveRadioBtn, setInActiveRadioBtn] = useState(false)
 
   const onSubmit = (data) => {
     const newTask = {
@@ -31,6 +32,7 @@ const Tasks = () => {
     }
     if (tasks !== null) {
       dispatch(addTask(newTask))
+      setInActiveRadioBtn(true)
     } else {
       dispatch()
     }
@@ -55,6 +57,7 @@ const Tasks = () => {
           <span>+</span>
         </Button>
         <CreateTaskForm
+          inActiveRadio={inActiveRadioBtn}
           className={cx({ [styles.activeForm]: isActiveForm })}
           register={register}
           handleSubmit={handleSubmit}
